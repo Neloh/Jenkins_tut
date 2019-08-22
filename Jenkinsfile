@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'export PATH=${PATH}:/usr/local/bin'
+        sh 'PATH=${PATH}:/usr/local/bin'
         sh '/usr/local/bin/pip install -r requirements.txt'
       }
     }
