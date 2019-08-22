@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'sudo easy_install pip'
+        sh 'export PATH=${PATH}:/usr/local/bin'
         sh '/usr/local/bin/pip install -r requirements.txt'
       }
     }
