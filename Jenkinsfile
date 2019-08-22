@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'PATH=${PATH}:/usr/local/bin'
-        sh '/usr/local/bin/pip install -r requirements.txt'
+        sh 'pip install --upgrade pip'
+        sh 'pip install -r requirements.txt'
       }
     }
     stage('test') {
