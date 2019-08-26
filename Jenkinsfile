@@ -5,7 +5,8 @@ pipeline {
       steps {
         sh """
         echo $PYTHON_INTERPRETER
-        $PYTHON_INTERPRETER/pip install -r requirements.txt
+        . ~/venv/bin/activate
+        pip install -r requirements.txt
         """
       }
     }
