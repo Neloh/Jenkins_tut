@@ -3,13 +3,18 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '. venv/bin/activate'
-        sh 'pip install -r requirements.txt'
+        sh """
+        . venv/bin/activate
+        pip install -r requirements.txt
+        """
       }
     }
     stage('test') {
       steps {
-        sh 'python test.py'
+        sh """
+        . venv/bin/activate
+        python test.py
+        """
       }
       post {
         always {
