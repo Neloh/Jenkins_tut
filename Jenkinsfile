@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh """
-        . ~/venv/bin/activate
+        . venv/bin/activate
         pip install -r requirements.txt
         """
       }
@@ -12,7 +12,7 @@ pipeline {
     stage('test') {
       steps {
         sh """
-        . ~/venv/bin/activate
+        . venv/bin/activate
         python test.py
         """
       }
