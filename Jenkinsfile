@@ -4,16 +4,15 @@ pipeline {
     stage('build') {
       steps {
         sh """
-        . venv/bin/activate
-        pip install -r requirements.txt
+        echo $PYTHON_INTERPRETER
+        $PYTHON_INTERPRETER/pip install -r requirements.txt
         """
       }
     }
     stage('test') {
       steps {
         sh """
-        . venv/bin/activate
-        python test.py
+        $PYTHON_INTERPRETER test.py
         """
       }
       post {
